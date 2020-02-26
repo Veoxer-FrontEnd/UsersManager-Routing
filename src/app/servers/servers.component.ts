@@ -19,7 +19,11 @@ export class ServersComponent implements OnInit {
   }
 
   onReload(){
-    this.router.navigate(['servers'], {relativeTo: this.route});
+    this.router.navigate(['/servers'], {relativeTo: this.route});
+  }
+
+  onLoadServer(id: number){
+    this.router.navigate(['/servers', id, 'edit'], {queryParams: {allowEdit: true}, fragment: 'reloading'});
   }
 
 }
